@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "الرئيسية - Djelfa info";
+}
+
+<main>
+    <section class="row" aria-labelledby="welcomeTitle" style="margin-bottom: 2rem;">
+        <h1 id="welcomeTitle" class="text-center" style="color:#800000; font-weight:bold;">مرحباً بك في موقع Djelfa info</h1>
+        <p class="lead text-center" style="font-size:1.2rem;">
+            موقع Djelfa info هو منصتك الصحفية الموثوقة لتغطية آخر الأخبار والمقالات من جلفة والمناطق المحيطة.
+        </p>
+    </section>
+
+    <div class="row text-center">
+        <section class="col-md-4 mb-4" aria-labelledby="latestNewsTitle">
+            <h2 id="latestNewsTitle" style="color:#800000;">أحدث المقالات</h2>
+            <p>
+                تصفح أحدث المقالات التي كتبها صحفيو موقعنا لتبقى على اطلاع دائم بالأحداث.
+            </p>
+            <p><a class="btn btn-outline-dark" href="@Url.Action("Index", "Articles")">عرض المقالات &raquo;</a></p>
+        </section>
+        <section class="col-md-4 mb-4" aria-labelledby="writeArticleTitle">
+            <h2 id="writeArticleTitle" style="color:#800000;">أضف مقالة جديدة</h2>
+            <p>
+                شارك أفكارك وآرائك بكتابة مقالة جديدة تضيف قيمة للمجتمع الصحفي.
+            </p>
+            <p><a class="btn btn-outline-dark" href="@Url.Action("Create", "Articles")">إنشاء مقالة &raquo;</a></p>
+        </section>
+        <section class="col-md-4 mb-4" aria-labelledby="manageAccountTitle">
+            <h2 id="manageAccountTitle" style="color:#800000;">حسابي</h2>
+            <p>
+                قم بإدارة بيانات حسابك الشخصية وتحديث معلوماتك بسهولة.
+            </p>
+            <p><a class="btn btn-outline-dark" href="@Url.Action("Profile", "Account")">عرض الحساب &raquo;</a></p>
+        </section>
+    </div>
+</main>

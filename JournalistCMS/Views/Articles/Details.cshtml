@@ -1,0 +1,13 @@
+﻿@model JournalistCMS.Models.Article
+@{
+    ViewBag.Title = "تفاصيل المقالة";
+}
+<div class="container mt-4">
+    <div class="card p-4">
+        <h2>@Model.Title</h2>
+        <small class="text-muted">تم النشر في: @Model.PublishDate.ToString("yyyy-MM-dd")</small>
+        <hr />
+        <p>@Model.Content</p>
+        <a href="@Url.Action("Index")" class="btn btn-primary">رجوع إلى القائمة</a>
+    </div>
+</div>

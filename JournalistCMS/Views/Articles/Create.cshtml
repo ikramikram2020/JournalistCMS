@@ -1,0 +1,23 @@
+﻿@model JournalistCMS.Models.Article
+@{
+    ViewBag.Title = "إضافة مقالة جديدة";
+}
+<div class="container mt-4">
+    <h2 class="mb-3">إضافة مقالة جديدة</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.Title, new { @class = "form-label" })
+            @Html.TextBoxFor(model => model.Title, new { @class = "form-control", placeholder = "عنوان المقالة" })
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.Content, new { @class = "form-label" })
+            @Html.TextAreaFor(model => model.Content, new { @class = "form-control", rows = 6, placeholder = "نص المقالة" })
+        </div>
+
+        <button type="submit" class="btn btn-success">نشر المقالة</button>
+    }
+</div>

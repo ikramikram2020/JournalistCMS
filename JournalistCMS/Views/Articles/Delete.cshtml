@@ -1,0 +1,18 @@
+﻿// /Views/Articles/Delete.cshtml
+@model JournalistCMS.Models.Article
+@{
+    ViewBag.Title = "حذف مقالة";
+}
+<div class="container mt-4">
+    <h2 class="mb-3 text-danger">هل أنت متأكد من حذف المقالة؟</h2>
+    <div class="alert alert-warning">
+        <strong>عنوان المقالة:</strong> @Model.Title
+    </div>
+    @using (Html.BeginForm("DeleteConfirmed", "Articles", new { id = Model.Id }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-danger">تأكيد الحذف</button>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">إلغاء</a>
+    }
+</div>
+

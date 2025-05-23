@@ -1,0 +1,27 @@
+﻿// /Views/Articles/Edit.cshtml
+@model JournalistCMS.Models.Article
+@{
+    ViewBag.Title = "تعديل المقالة";
+}
+<div class="container mt-4">
+    <h2 class="mb-3">تعديل المقالة</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.Title, new { @class = "form-label" })
+            @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.Content, new { @class = "form-label" })
+            @Html.TextAreaFor(model => model.Content, new { @class = "form-control", rows = 6 })
+        </div>
+
+        <button type="submit" class="btn btn-warning">حفظ التعديلات</button>
+    }
+</div>
+
+
